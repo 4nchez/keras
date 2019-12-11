@@ -73,6 +73,7 @@ print('mse[4] : ', mse[4]) # x1, x2, merge, y1 =4개
 
 y1_predict = model.predict([x1_test,x2_test])
 print(y1_predict)
+
 # RMSE 구하기
 from sklearn.metrics import mean_squared_error
 # def RMSE(y_test, y_predict):
