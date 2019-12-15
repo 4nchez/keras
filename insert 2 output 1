@@ -1,5 +1,6 @@
 #insert x(2) output(1)
 #1. 데이터
+
 import numpy as np
 x1 = np.array([range(100), range(311,411), range(100)])
 x2 = np.array([range(501,601), range(711,811), range(100)])
