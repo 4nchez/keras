@@ -34,8 +34,10 @@ xx = Dense(15)(xx)
 middle2 = Dense(15)(xx)
 
 # concatenate
-from keras.layers.merge import concatenate
-marge1 = concatenate([middle1, middle2])
+from keras.layers.merge import concatenate, Concatenate
+# marge1 = concatenate([middle1, middle2])
+marge1 = Concatenate()([middle1, middle2])
+
 output1 = Dense(15)(marge1)
 output1 = Dense(15)(output1)
 output1 = Dense(1)(output1)
@@ -51,11 +53,12 @@ model.summary()
 model.compile(optimizer='adam', loss='mse')
 from keras.callbacks import EarlyStopping
 early_stopping = EarlyStopping(monitor='loss', patience=100, mode='auto')
-model.fit([x_1, x_2], [y_1, y_2], epochs=1000, batch_size=1, callbacks=[early_stopping])
+# model.fit([x_1, x_2], [y_1, y_2], epochs=1000, batch_size=1, callbacks=[early_stopping])
+model.fit([x_1, x_1], [y_1, y_1], epochs=1000, batch_size=1, callbacks=[early_stopping])
 
-# predict용 데이터
-x_input = array([25,35,45])
-x_input = x_input.reshape((1,3,1))
+# # predict용 데이터
+# x_input = array([25,35,45])
+# x_input = x_input.reshape((1,3,1))
 
-yhat = model.predict(x_input)
-print(yhat)
+# yhat = model.predict(x_input)
+# print(yhat)
