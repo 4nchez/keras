@@ -16,7 +16,9 @@ print("x.shape : ",x.shape)
 # 2. 모델 구성
 model = Sequential()
 model.add(LSTM(51, activation='relu', input_shape=(3,1), return_sequences=True))
-model.add(LSTM(30))
+model.add(LSTM(30, activation='relu', return_sequences=True))
+model.add(LSTM(30, activation='relu', return_sequences=True))
+model.add(LSTM(30, activation='relu', return_sequences=True))
 model.add(Dense(20))
 model.add(Dense(1))
 
