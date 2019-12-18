@@ -38,7 +38,7 @@ model.add(Flatten())
 model.add(Dense(128, activation='relu'))
 model.add(Dropout(0.5))
 model.add(Dense(10, activation='softmax'))
-
+#categorical_crossentropy : 다중 분류 손실함수 -> softmax를 쓸때는 무조건 loss는 이 함수를 사용해야 한다.
 # model.summary()
 
 model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
